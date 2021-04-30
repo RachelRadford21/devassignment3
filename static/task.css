@@ -1,0 +1,56 @@
+body {
+  background-image: url("noita-digital-QZX8jbK1xEw-unsplash.jpg");
+  font-family: "Helvetica Neue";
+  margin: 0;
+  padding: 0;
+}
+/* Styles the nav bar for the task page */
+.taskNav {
+  background-color: whitesmoke;
+  display: flex;
+  font-family: 16px "Helvetica Neue";
+  height: 35px;
+  padding: 8px 16px;
+  text-decoration: none;
+  width: auto;
+}
+/* Styles the "home button"(queue) on nav bar */
+.home {
+  color: black;
+  font-size: 20px;
+  margin: 0px 16px 0px 0px;
+  padding: 5px 0px;
+  text-decoration: none;
+  word-spacing: 13px;
+}
+
+/* Styles the navbar login button */
+.login {
+  color: gray;
+  padding-right: auto;
+  text-decoration: none;
+}
+/* Styles the navbar task list button */
+.default {
+  color: gray;
+  text-decoration: none;
+}
+/* Styles the right side navbar buttons */
+.rightSide {
+  float: right;
+  margin-left: auto;
+  padding-top: 5px;
+  text-align: right;
+}
+
+.mainThree {
+  padding-bottom: auto;
+  padding-left: auto;
+  padding-right: auto;
+  padding-top: 300px;
+  text-align: center;
+  text-decoration: none;
+}
+input {
+  outline: none;
+}

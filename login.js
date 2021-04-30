@@ -13,8 +13,6 @@ app.use(express.urlencoded({extended:true}));
 
  app.use(express.static(__dirname));
 
- app.use("static/styles", express.static(path.join(__dirname, "/bootstrap/dist/css"))); 
-
 // Allows me to join the directory and the static files, so I can use css
 app.use(express.static(path.join(__dirname, 'static')));
 
@@ -158,7 +156,113 @@ app.post('/signup', (req, res) => {
     res.redirect("/tasks")
 });
 
+/**
+ *  Sets up tasks page and styling for this page
+ */
 
+ app.get("/tasks", (req, res)=>{
+    let task = `
+       <link rel="stylesheet" href="static/task.css">
+    
+       <nav class="taskNav">
+    
+       <a href='/index.html' class='home'>queue</a>
+
+        <div class='rightSide'>
+      
+        <a href="login" class="login">log in</a>&nbsp;&nbsp;
+
+       <a href="list" class="default">task list</a>
+       
+       </div>
+       
+       </nav>
+    
+       <div class="mainThree">
+    
+       <form action="/tasks" method="post" name="taskAction" class="taskAction" >
+    
+         Task Input :
+       <input type = 'textarea' name='task' value="Enter A Task"/>
+    
+       <button type="submit">Submit</button>
+       </form>
+       </div> ` ;
+   
+          res.send(task);
+    });
+
+/**
+ * Posts tasks entered into the input and saves them to mongodb
+ */
+    app.post('/tasks', (req, res) => {
+
+    
+        let todo = req.body.task;
+    
+  
+           MongoClient.connect('mongodb://localhost:27018/customers', (err, db) => {
+
+               if (err) throw err
+        
+               let dbCollection = db.collection("users");
+        
+    
+                dbCollection.insert({ "task": todo }, (err, result) => {
+      
+                db.close();
+            });
+        });
+  
+    res.redirect("/default");
+});
+
+/**
+ * Sets up the task list page(default), which, lists the tasks, and the css styling for this page.
+ * The tasks enter on the task page are pulled from mongodb and displayed on the "default" page.
+ */
+
+ app.get('/default', (req, res) => {
+    let navi = `
+<link rel="stylesheet" href="static/default.css"></link>
+<nav class="defNav">
+
+   <a href='/index.html' class='home'>queue</a>
+
+   <div class='rightSide'>
+
+   <a href="login" class="login">log in</a>&nbsp;&nbsp;
+
+   <a href="tasks" class="tasks">tasks</a>&nbsp;&nbsp;
+
+   </div>
+   </nav>
+`;
+
+MongoClient.connect('mongodb://localhost:27018/customers', (err, db) => {
+  
+if (err) throw err
+   
+    let dbCollection = db.collection('users');
+   
+        dbCollection.find().toArray((err, documents) => {
+            
+            let display = "";
+            
+            for(let i = 0; i < documents.length; i++){
+              
+                display += documents[i].task + "<br/>";
+            }
+            
+              res.send(`${navi}` + `<h1 class='list'>${display}</h1>`)
+          
+            db.close();
+        
+        });
+    });
+    
+     });
+   
 
 /**
  * Port to listen on
