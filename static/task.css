@@ -24,12 +24,26 @@ body {
   word-spacing: 13px;
 }
 
+/* Changes the appearance of the "home button" when hovering */
+.home:hover {
+  color: grey;
+  text-decoration: underline;
+  transition: 0.9s ease;
+}
+
 /* Styles the navbar login button */
 .login {
   color: gray;
   padding-right: auto;
   text-decoration: none;
 }
+
+#login:hover {
+  color: black;
+  text-decoration: underline;
+  transition: 0.9s ease;
+}
+
 /* Styles the navbar task list button */
 .default {
   color: gray;

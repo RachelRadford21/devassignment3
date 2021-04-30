@@ -219,7 +219,9 @@ app.post('/signup', (req, res) => {
 
 /**
  * Sets up the task list page(default), which, lists the tasks, and the css styling for this page.
- * The tasks enter on the task page are pulled from mongodb and displayed on the "default" page.
+ * The tasks entered on the task page are pulled from mongodb and displayed on the "default" page.
+ * Not sure why, but the first value displayed is always undefined. It makes sense when 
+ * nothing is stored in the db but not so much after that??
  */
 
  app.get('/default', (req, res) => {

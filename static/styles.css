@@ -11,3 +11,15 @@ body {
   margin-top: 300px;
   text-align: center;
 }
+
+#login:hover {
+  color: black;
+  text-decoration: underline;
+  transition: 0.9s ease;
+}
+
+#signup:hover {
+  color: black;
+  text-decoration: underline;
+  transition: 0.9s ease;
+}

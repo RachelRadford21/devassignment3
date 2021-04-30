@@ -21,6 +21,12 @@ body {
   padding: 5px 0px;
   text-decoration: none;
 }
+/* Changes the appearance of the "home button" when hovering */
+.home:hover {
+  color: grey;
+  text-decoration: underline;
+  transition: 0.9s ease;
+}
 /* Styles sign up form */
 .signForm {
   align-items: center;

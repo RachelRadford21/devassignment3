@@ -22,6 +22,13 @@ body {
   text-decoration: none;
 }
 
+/* Changes the appearance of the "home button" when hovering */
+.home:hover {
+  color: grey;
+  text-decoration: underline;
+  transition: 0.9s ease;
+}
+
 /* Login form style */
 .logForm {
   backdrop-filter: blur(25px);
