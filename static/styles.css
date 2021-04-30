@@ -1,0 +1,12 @@
+body {
+  background-image: url("noita-digital-QZX8jbK1xEw-unsplash.jpg");
+  margin: 0;
+  padding: 0;
+}
+
+/* Centering the quote container */
+.container {
+  color: white;
+  margin-top: 300px;
+  text-align: center;
+}
