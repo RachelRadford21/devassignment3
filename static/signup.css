@@ -1,0 +1,39 @@
+body {
+  background-image: url("noita-digital-QZX8jbK1xEw-unsplash.jpg");
+  font-family: "Helvetica Neue";
+  margin: 0;
+  padding: 0;
+}
+/* signup nav bar styling */
+.signUpNav {
+  background-color: whitesmoke;
+  display: flex;
+  font-family: 16px "Helvetica Neue";
+  height: 35px;
+  padding: 8px 16px;
+  width: auto;
+}
+/* Styles the "home button"(queue) */
+.home {
+  color: black;
+  font-size: 20px;
+  margin: 0px 16px 0px 0px;
+  padding: 5px 0px;
+  text-decoration: none;
+}
+/* Styles sign up form */
+.signForm {
+  align-items: center;
+  backdrop-filter: blur(55px);
+  background-color: whitesmoke;
+  border-color: silver;
+  border-style: outset;
+  height: 250px;
+  margin-bottom: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 175px;
+  padding-top: 50px;
+  text-align: center;
+  width: 300px;
+}
