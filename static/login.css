@@ -9,24 +9,38 @@ body {
   background-color: whitesmoke;
   display: flex;
   font-size: 16px;
-  height: 35px;
+  height: 45px;
   padding: 8px 16px;
   width: auto;
 }
 /* Styles home button(the "queue button is home */
-.home {
+.navbar-brand {
   color: black;
   font-size: 20px;
   margin: 0px 16px 0px 0px;
   padding: 5px 0px;
   text-decoration: none;
 }
-
-/* Changes the appearance of the "home button" when hovering */
-.home:hover {
+/* Change appearance of the "home button" when hovered over */
+.navbar-brand:hover {
   color: grey;
   text-decoration: underline;
+}
+.signup {
+  color: grey;
+}
+
+.signup:hover {
+  color: black;
+  text-decoration: underline;
   transition: 0.9s ease;
+}
+
+.rightSide {
+  float: right;
+  margin-left: auto;
+  padding-top: 5px;
+  text-align: right;
 }
 
 /* Login form style */
@@ -35,11 +49,11 @@ body {
   background-color: whitesmoke;
   border-style: inset;
   border-color: silver;
-  height: 200px;
+  height: 210px;
   text-align: center;
   margin-right: auto;
   margin-left: auto;
   margin-top: 200px;
-  padding-top: 55px;
+  padding-top: 10px;
   width: 200px;
 }

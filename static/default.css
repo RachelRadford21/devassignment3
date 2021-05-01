@@ -9,13 +9,13 @@ body {
   background-color: whitesmoke;
   display: flex;
   font-size: 16px;
-  height: 35px;
+  height: 45px;
   padding: 8px 16px;
   text-decoration: none;
   width: auto;
 }
 /* Styles the "home button"(queue) on nav bar */
-.home {
+.navbar-brand {
   color: black;
   font-size: 20px;
   margin: 0px 16px 0px 0px;
@@ -25,20 +25,20 @@ body {
 }
 
 /* Changes the appearance of the "home button" when hovering */
-.home:hover {
+.navbar-brand:hover {
   color: grey;
   text-decoration: underline;
   transition: 0.1s ease;
 }
 
 /* Styles the navbar login button */
-.login {
+.signup {
   color: gray;
   padding-right: auto;
   text-decoration: none;
 }
 
-.login:hover {
+.signup:hover {
   color: grey;
   text-decoration: underline;
   transition: 0.9s ease;

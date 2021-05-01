@@ -26,27 +26,37 @@ next();
 });
 
 /**
- * Creates login in form and links to css page
+ * Creates login in form and links to css page.
+ * The links allow me to add the fire icon to queue
  */
 app.get('/login', (req, res) => {
     let form = `
     <link rel="stylesheet" type="text/css" href="static/login.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <nav class="loginNav">
-    <a href='/index.html' class='home'>queue</a>
+    <a class="navbar-brand" href="/index.html">que<i class="fas fa-fire">e</i></a>
+    <div class='rightSide'>
+      
+    <a href="signup" class="signup">sign up</a>&nbsp;&nbsp;
+</div>
     </nav>
+    
     <div class="main">
-      <form action="/login" method="post" name="logForm" class="logForm">
-      Enter Username:
-      <input type="text" name="username"/>
-      <br/>
-      <br/>
-      Enter Password:
-      <input type="text" name="password"/>
-      <br/>
-      <br/>
-      <button type="submit">Submit</button>
-  </form>
-  </div>
+    <form action="/login" method="post" name="logForm" class="logForm">
+    Enter Username:
+    <input type="text" name="username"/>
+    <br/>
+    <br/>
+    Enter Password:
+    <input type="text" name="password"/>
+    <br/>
+    <br/>
+    <button type="submit">Submit</button>
+    </form>
+    </div>
+    <script src="https://kit.fontawesome.com/19621eb927.js" crossorigin='anonymous'></script>
       `;
       
   res.send(form)
@@ -65,8 +75,6 @@ app.get('/login', (req, res) => {
         if (err) throw err
       
           let dbCollection = db.collection("users");
-
-          let projection = {"Password":1,"Username":1,"_id":0}
      
                dbCollection.findOne({"Username":formName},(err, document ) => {
  
@@ -94,34 +102,42 @@ app.get('/login', (req, res) => {
  app.get("/signup", function (req, res) {
     let form = `
          <link rel="stylesheet" type="text/css" href="static/signup.css">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+         <link rel="preconnect" href="https://fonts.gstatic.com">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
          <nav class="signUpNav">
-            <a href='/index.html' class='home'>queue</a>
+         <a class="navbar-brand" href="/index.html">que<i class="fas fa-fire">e</i></a>
+         <div class='rightSide'>
+      
+         <a href="login" class="login">log in</a>&nbsp;&nbsp;
+     </div>
          </nav>
          <div class="mainTwo">
          <form action="/signup" method="post" name="signForm" class="signForm" >
-          Enter Username:
+         Enter Username:
          <input type="text" name="username"/>
          <br/>
          <br/>
-          Enter First Name:
+         Enter First Name:
          <input type="text" name="fName"/>
          <br/>
          <br/>
-          Enter Last Name:
+         Enter Last Name:
          <input type="text" name="lName"/>
          <br/>
          <br/>
-          Enter E-mail:
+         Enter E-mail:<br/>
          <input type="text" name="email"/>
          <br/>
          <br/>
-          Enter Password:
+         Enter Password:
          <input type="password" name="password"/>
          <br/>
          <br/>
          <button type="submit">Submit</button>
          </form>
          </div>
+         <script src="https://kit.fontawesome.com/19621eb927.js" crossorigin='anonymous'></script>
          `;
              res.send(form);
     
@@ -163,10 +179,13 @@ app.post('/signup', (req, res) => {
  app.get("/tasks", (req, res)=>{
     let task = `
        <link rel="stylesheet" href="static/task.css">
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+       <link rel="preconnect" href="https://fonts.gstatic.com">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
        <nav class="taskNav">
     
-       <a href='/index.html' class='home'>queue</a>
+       <a class="navbar-brand" href="/index.html">que<i class="fas fa-fire">e</i></a>
 
         <div class='rightSide'>
       
@@ -187,7 +206,9 @@ app.post('/signup', (req, res) => {
     
        <button type="submit">Submit</button>
        </form>
-       </div> ` ;
+       </div> 
+       <script src="https://kit.fontawesome.com/19621eb927.js" crossorigin='anonymous'></script>
+       ` ;
    
           res.send(task);
     });
@@ -226,19 +247,24 @@ app.post('/signup', (req, res) => {
 
  app.get('/default', (req, res) => {
     let navi = `
-<link rel="stylesheet" href="static/default.css"></link>
-<nav class="defNav">
+       <link rel="stylesheet" href="static/default.css"></link>
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+       <link rel="preconnect" href="https://fonts.gstatic.com">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
+      
+        <nav class="defNav">
 
-   <a href='/index.html' class='home'>queue</a>
+        <a class="navbar-brand" href="/index.html">que<i class="fas fa-fire">e</i></a>
 
-   <div class='rightSide'>
+        <div class='rightSide'>
 
-   <a href="login" class="login">log in</a>&nbsp;&nbsp;
+        <a href="signup" class="signup">sign up</a>&nbsp;&nbsp;
 
-   <a href="tasks" class="tasks">tasks</a>&nbsp;&nbsp;
+        <a href="tasks" class="tasks">tasks</a>&nbsp;&nbsp;
 
-   </div>
-   </nav>
+        </div>
+        </nav>
+        <script src="https://kit.fontawesome.com/19621eb927.js" crossorigin='anonymous'></script>
 `;
 
 MongoClient.connect('mongodb://localhost:27018/customers', (err, db) => {
@@ -251,11 +277,17 @@ if (err) throw err
             
             let display = "";
             
-            for(let i = 0; i < documents.length; i++){
-              
-                display += documents[i].task + "<br/>";
-            }
-            
+           for(let i = 0; i < documents.length; i++){
+
+             //  I tried to filter the undefined task values, with no luck
+                if(documents[i].task !== "undefined"){
+
+                    display += documents[i].task + "<br/>";
+                  
+
+           }
+           }
+           
               res.send(`${navi}` + `<h1 class='list'>${display}</h1>`)
           
             db.close();
