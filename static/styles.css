@@ -12,12 +12,14 @@ body {
   text-align: center;
 }
 
+/* Styles for the nav bar log in link */
 #login:hover {
   color: black;
   text-decoration: underline;
   transition: 0.9s ease;
 }
 
+/* Styles for the sign up nav bar link */
 #signup:hover {
   color: black;
   text-decoration: underline;

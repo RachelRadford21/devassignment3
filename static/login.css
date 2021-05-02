@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
 }
-/* login nav bar styling */
+/* login pg nav bar styling */
 .loginNav {
   background-color: whitesmoke;
   display: flex;
@@ -13,7 +13,7 @@ body {
   padding: 8px 16px;
   width: auto;
 }
-/* Styles home button(the "queue button is home */
+/* Styles home nav bar link (the "queue button") */
 .navbar-brand {
   color: black;
   font-size: 20px;
@@ -26,6 +26,8 @@ body {
   color: grey;
   text-decoration: underline;
 }
+
+/* Styles for the sign up nav bar link */
 .signup {
   color: grey;
 }
@@ -36,6 +38,7 @@ body {
   transition: 0.9s ease;
 }
 
+/* Container for right side nav bar links */
 .rightSide {
   float: right;
   margin-left: auto;

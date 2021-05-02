@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
 }
-/* signup nav bar styling */
+/* signup pg nav bar styling */
 .signUpNav {
   background-color: whitesmoke;
   display: flex;
@@ -27,6 +27,8 @@ body {
   text-decoration: underline;
   transition: 0.9s ease;
 }
+
+/* The log in navbar link */
 .login {
   color: gray;
   padding-right: auto;
@@ -38,6 +40,8 @@ body {
   text-decoration: underline;
   transition: 0.9s ease;
 }
+
+/* Container for right side nav bar links  */
 .rightSide {
   float: right;
   margin-left: auto;

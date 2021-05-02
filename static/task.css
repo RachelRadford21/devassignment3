@@ -31,25 +31,20 @@ body {
   transition: 0.9s ease;
 }
 
-/* Styles the navbar login button */
-.login {
+/* Styles the navbar task list(default) link */
+.default {
   color: gray;
-  padding-right: auto;
   text-decoration: none;
 }
 
-#login:hover {
+/* Styles the task list link when hovered over */
+.default:hover {
   color: black;
   text-decoration: underline;
   transition: 0.9s ease;
 }
 
-/* Styles the navbar task list button */
-.default {
-  color: gray;
-  text-decoration: none;
-}
-/* Styles the right side navbar buttons */
+/* Styles the right side navbar links */
 .rightSide {
   float: right;
   margin-left: auto;
@@ -57,6 +52,7 @@ body {
   text-align: right;
 }
 
+/* Styles the task text input area */
 .mainThree {
   padding-bottom: auto;
   padding-left: auto;
@@ -65,6 +61,8 @@ body {
   text-align: center;
   text-decoration: none;
 }
+
+/* Removes blue outline from text box on task page */
 input {
   outline: none;
 }
