@@ -276,17 +276,16 @@ app.post('/signup', (req, res) => {
 `;
 
 MongoClient.connect('mongodb://localhost:27018/customers', (err, db) => {
-  
+    
     if (err) throw err
-   
-      let dbCollection = db.collection('users');
-   
-           dbCollection.find().toArray((err, documents) => {
-            
+    
+    let dbCollection = db.collection('users');
+    
+    dbCollection.find().toArray((err, documents) => {
+       
             let display = "";
             
                for(let i = 0; i < documents.length; i++){
-
              /** Filters out the undefined task values that show up after the first task
               *  a new user creates
               */
