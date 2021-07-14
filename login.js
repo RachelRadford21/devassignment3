@@ -75,8 +75,8 @@ app.get('/login', (req, res) => {
  * return to the login pg to try again.
  */
  app.post('/login', (req, res) => {
-    
-    MongoClient.connect('mongodb://localhost:27018/customers', (err, db) => {
+//     I changed the localhost port number. I was unsure if it was safe to include it.
+    MongoClient.connect('mongodb://localhost:00000/customers', (err, db) => {
        
         let formName = req.body.username;
         let passWord = req.body.password;
@@ -171,8 +171,8 @@ app.post('/signup', (req, res) => {
     let lName = req.body.lName;
     let email = req.body.email;
     let password = req.body.password;
-  
-    MongoClient.connect('mongodb://localhost:27018/customers', (err, db) => {
+  //     I changed the localhost port number. I was unsure if it was safe to include it.
+    MongoClient.connect('mongodb://localhost:00000/customers', (err, db) => {
        
     if (err) throw err
        
@@ -233,8 +233,8 @@ app.post('/signup', (req, res) => {
     app.post('/tasks', (req, res) => {
 
         let todo = req.body.task;
-    
-           MongoClient.connect('mongodb://localhost:27018/customers', (err, db) => {
+    //     I changed the localhost port number. I was unsure if it was safe to include it.
+           MongoClient.connect('mongodb://localhost:00000/customers', (err, db) => {
 
                if (err) throw err
         
@@ -274,8 +274,8 @@ app.post('/signup', (req, res) => {
         </nav>
         <script src="https://kit.fontawesome.com/19621eb927.js" crossorigin='anonymous'></script>
 `;
-
-MongoClient.connect('mongodb://localhost:27018/customers', (err, db) => {
+//     I changed the localhost port number. I was unsure if it was safe to include it.
+MongoClient.connect('mongodb://localhost:00000/customers', (err, db) => {
     
     if (err) throw err
     
